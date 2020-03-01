@@ -1,3 +1,50 @@
 body{
     padding: 100px;
 }
+#submit-area{
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 40px;
+}
+#transaction-area{
+    display: none;
+}
+.wholebalance{
+    padding:20px;
+    margin: 20px;
+}
+.addBalance{
+    padding: 40px;
+    
+}
+.addDiposit{
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+}
+.addWithdraw{
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+    
+}
+
+.diposit{
+    background-color: slateblue;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+}
+.widthdraw{
+    background-color: lightsalmon;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+}
+.balance{
+    background-color: orange;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+}

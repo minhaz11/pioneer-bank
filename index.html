@@ -8,6 +8,107 @@
     <title>Pioneer Bank</title>
 </head>
 <body>
-    <h1 class="text-center">Welcome to Pioneer Bank</h1>
+    <div class="login-area" id="login-area">
+        <h1 class="text-center">Welcome to Pioneer Bank</h1>
+        <div id="submit-area">
+            <h4 for="">Login</h4>
+            <input type="text" name="" id="" class="form-control" placeholder="Email"><br>
+            <input type="password" name="" class="form-control" id="" placeholder="password"><br>
+            <button id="login" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+    <div id="transaction-area" class="container">
+        <div class="row wholebalance   ">
+            <div class="col-md-4">
+               <div class="diposit">
+                    <h4>Diposit</h4>
+                    <h3>$ <span id="currentDeposit">0</span></h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+                <div class="widthdraw">
+                    <h4>Widthdraw</h4>
+                    <h3>$ <span id="currentWidthdraw">0</span> </h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance">
+                    <h4>Balance</h4>
+                    <h3>$ <span id="currentBalance">1200</span> </h3>  
+                </div>
+            </div>
+        </div>
+        <div class="row addBalance ">
+            <div class="col-md-6">
+                <div class="addDiposit">
+                <h3>Deposit</h3>
+                <input id="dipositAmount"  class="form-control" type="text" name="" id="" placeholder="$ amount you want to deposit"> <br>
+                <button class="btn btn-success" id="diposit">Enter</button>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+               <div class="addWithdraw">
+                <h3>Widthraw</h3>
+                <input id="widthdrawAmount" type="text" class="form-control" name="" id="" placeholder="$ amount you want to deposit"><br>
+                <button class="btn btn-success" id="widthraw">Enter</button>
+               </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //login Button event listener
+        const buttonClick = document.getElementById("login");
+        buttonClick.addEventListener("click", function(){
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display ="none";
+
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        })
+
+        //Deposit btn event listener
+        const dipositBtn = document.getElementById("diposit");
+        dipositBtn.addEventListener("click", function(){
+            const dipositAmount= document.getElementById("dipositAmount").value;
+            const dipositNumber = parseFloat(dipositAmount);
+
+            const currentDeposit = document.getElementById("currentDeposit").innerText;
+            const currentNumber = parseFloat(currentDeposit);
+            const total = currentNumber+dipositNumber;
+            document.getElementById("currentDeposit").innerText=total;
+            document.getElementById("dipositAmount").value = "";
+
+           const currentBalance= document.getElementById("currentBalance").innerText;
+           const currentBalanceNumber  = parseFloat(currentBalance);
+           const totalBalance = dipositNumber+currentBalanceNumber;   
+           document.getElementById("currentBalance").innerText=totalBalance;  
+           
+           })
+
+        //widthdraw event listener
+        const widthdrawBtn = document.getElementById("widthraw");
+        widthdrawBtn.addEventListener("click", function (){
+            const widthdrawAmount = document.getElementById("widthdrawAmount").value;
+            const widthdrawNumber = parseFloat(widthdrawAmount);
+            const currentWidthraw = document.getElementById("currentWidthdraw").innerText;
+            const currentWidthdrawBalance = parseFloat(currentWidthraw);
+            const totalWidthdraw = currentWidthdrawBalance+widthdrawNumber;
+            document.getElementById("currentWidthdraw").innerText = totalWidthdraw;
+
+
+
+         const currentBalance =  document.getElementById("currentBalance").innerText;
+         const amountBalance = parseFloat(currentBalance);
+         const remainBalance =amountBalance - currentWidthdrawBalance;
+         document.getElementById("currentBalance").innerText = remainBalance;
+         document.getElementById("widthdrawAmount").value = "";
+
+
+
+        })
+    </script>
 </body>
 </html>
