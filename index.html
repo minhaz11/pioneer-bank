@@ -81,30 +81,35 @@
             document.getElementById("currentDeposit").innerText=total;
             document.getElementById("dipositAmount").value = "";
 
-           const currentBalance= document.getElementById("currentBalance").innerText;
+        const currentBalance= document.getElementById("currentBalance").innerText;
            const currentBalanceNumber  = parseFloat(currentBalance);
-           const totalBalance = dipositNumber+currentBalanceNumber;   
+           const totalBalance = currentBalanceNumber+dipositNumber;   
            document.getElementById("currentBalance").innerText=totalBalance;  
            
            })
+
+        
+           
+           
 
         //widthdraw event listener
         const widthdrawBtn = document.getElementById("widthraw");
         widthdrawBtn.addEventListener("click", function (){
             const widthdrawAmount = document.getElementById("widthdrawAmount").value;
             const widthdrawNumber = parseFloat(widthdrawAmount);
+           
             const currentWidthraw = document.getElementById("currentWidthdraw").innerText;
             const currentWidthdrawBalance = parseFloat(currentWidthraw);
             const totalWidthdraw = currentWidthdrawBalance+widthdrawNumber;
             document.getElementById("currentWidthdraw").innerText = totalWidthdraw;
-
+            document.getElementById("widthdrawAmount").value = "";
 
 
          const currentBalance =  document.getElementById("currentBalance").innerText;
          const amountBalance = parseFloat(currentBalance);
-         const remainBalance =amountBalance - currentWidthdrawBalance;
+         const remainBalance =amountBalance - widthdrawNumber;
          document.getElementById("currentBalance").innerText = remainBalance;
-         document.getElementById("widthdrawAmount").value = "";
+        
 
 
 
